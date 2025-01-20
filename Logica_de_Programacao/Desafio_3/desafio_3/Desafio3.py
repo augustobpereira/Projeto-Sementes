@@ -13,7 +13,7 @@ def main():
     print("Bem vindo ao sistema de cálculo de notas!")
     print('-------------------------------')
 
-    # Recebendo as notas do aluno
+    # INFORMANDO AS NOTAS DO ALUNO
     notas = []
     for i in range(1, 4):
         nota = float(input(f"Informe a {i}ª nota do aluno: "))
@@ -21,13 +21,13 @@ def main():
 
     print('-------------------------------\n')
 
-    # Calculando a média
+    # CALCULANDO A MEDIA
     media = sum(notas) / len(notas)
 
-    # Determinando o status do aluno
+    # DETERMINANDO O STATUS DO ALUNO
     status = calcular_status(media)
 
-    # Exibindo o resultado
+    # EXEBINDO O RESULTADO
     print("Resultado:")
     notas_formatadas = ", ".join(
         f"{i}ª nota: {nota:.2f}" for i, nota in enumerate(notas, start=1)
