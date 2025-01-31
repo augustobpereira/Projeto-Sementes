@@ -5,7 +5,6 @@ for i in range(20):
 
 vetor_unicos = []
 
-
 for nome in vetor_nomes:
     if nome not in vetor_unicos:
         vetor_unicos.append(nome)
