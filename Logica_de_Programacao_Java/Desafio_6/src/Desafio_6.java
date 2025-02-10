@@ -18,7 +18,7 @@ public class Desafio_6 {
                     break;
                 }
             } else {
-                System.out.println("ERRO! Digite novamente um número entre 1 e 10.");
+                System.out.println("ERRO! Digite Novamente um número entre 1 e 10.");
             }
         }
 
