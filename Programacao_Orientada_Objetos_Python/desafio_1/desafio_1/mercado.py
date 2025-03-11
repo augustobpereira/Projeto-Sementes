@@ -5,7 +5,7 @@ class Mercado:
     def __init__(self, arquivo_json):
         self.produtos = []
         self.arquivo_json = arquivo_json
-        self.ultimo_id = 0  # Inicia o ID como 0
+        self.ultimo_id = 0
 
     def adicionar_produto(self, produto):
         self.produtos.append(produto)
