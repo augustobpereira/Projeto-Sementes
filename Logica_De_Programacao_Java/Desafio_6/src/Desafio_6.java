@@ -23,7 +23,7 @@ public class Desafio_6 {
                     System.out.println("ERRO! Digite um número entre 1 e 10.");
                 }
             } else {
-                System.out.println("ERRO! Entrada inválida. Digite um número entre 1 e 10.");
+                System.out.println("ERRO! Valor inserido inválido. Digite um número inteiro entre 1 e 10.");
                 scanner.next();
             }
         }
