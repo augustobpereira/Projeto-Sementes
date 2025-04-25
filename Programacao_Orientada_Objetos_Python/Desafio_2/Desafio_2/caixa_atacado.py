@@ -25,20 +25,21 @@ class CaixaDoAtacado:
         total_final = total_inicial
         desconto_quantidade = 0
         desconto_pagamento = 0
+        acrescimo_pagamento = 0
 
         for nome, quantidade, preco_total_item in detalhes_itens:
-            if quantidade >= 5 and quantidade < 15:
+            if 5 <= quantidade < 15:
                 desconto = preco_total_item * 0.1
                 total_final -= desconto
                 desconto_quantidade += desconto
-            elif quantidade >= 15 and quantidade < 25:
+            elif 15 <= quantidade < 25:
                 desconto = preco_total_item * 0.2
                 total_final -= desconto
                 desconto_quantidade += desconto
             elif quantidade >= 25:
                 desconto = preco_total_item * 0.25
-                total_final -= preco_total_item * 0.25
-                desconto_quantidade += preco_total_item * 0.25
+                total_final -= desconto
+                desconto_quantidade += desconto
 
         if metodo_pagamento == 'dinheiro':
             desconto_pagamento = total_final * 0.05
@@ -46,9 +47,8 @@ class CaixaDoAtacado:
         elif metodo_pagamento == 'credito':
             acrescimo_pagamento = total_final * 0.03
             total_final += acrescimo_pagamento
-            desconto_pagamento = -acrescimo_pagamento
 
-        return total_inicial, total_final, detalhes_itens, metodo_pagamento, desconto_quantidade, desconto_pagamento
+        return total_inicial, total_final, detalhes_itens, metodo_pagamento, desconto_quantidade, desconto_pagamento, acrescimo_pagamento
 
     def adicionar_produto_ao_cardapio(self, nome, preco):
         produto = Produto(self.proximo_id, nome, preco)

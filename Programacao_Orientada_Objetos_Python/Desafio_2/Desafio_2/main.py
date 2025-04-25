@@ -32,16 +32,16 @@ def simular_compra(caixa):
     opcao_pagamento = int(input('Digite a opção de pagamento: '))
 
     if opcao_pagamento == 1:
-        metodo_pagamento = 'Dinheiro'
+        metodo_pagamento = 'dinheiro'
     elif opcao_pagamento == 2:
-        metodo_pagamento = 'Débito'
+        metodo_pagamento = 'debito'
     elif opcao_pagamento == 3:
-        metodo_pagamento = 'Crédito'
+        metodo_pagamento = 'credito'
     else:
         print('Opção de pagamento inválida.')
         return False
 
-    total_inicial, total_final, detalhes_itens, metodo_pagamento, desconto_quantidade, desconto_pagamento = caixa.computar_compra(itens_compra, metodo_pagamento)
+    total_inicial, total_final, detalhes_itens, metodo_pagamento, desconto_quantidade, desconto_pagamento, acrescimo_pagamento = caixa.computar_compra(itens_compra, metodo_pagamento)
 
     print('\nDetalhes da compra:')
     for nome, quantidade, preco_total_item in detalhes_itens:
@@ -50,7 +50,12 @@ def simular_compra(caixa):
     print(f'\nMetodo de pagamento: {metodo_pagamento}')
     print(f'Valor total inicial: R$ {total_inicial:.2f}')
     print(f'Desconto por quantidade: R$ {desconto_quantidade:.2f}')
-    print(f'Desconto/acréscimo por pagamento: R$ {desconto_pagamento:.2f}')
+
+    if desconto_pagamento > 0:
+        print(f'Desconto por pagamento: R$ {desconto_pagamento:.2f}')
+    if acrescimo_pagamento > 0:
+        print(f'Acréscimo por pagamento: R$ {acrescimo_pagamento:.2f}')
+
     print(f'Valor total final: R$ {total_final:.2f}')
 
     return True
